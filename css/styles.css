@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --principal: #1e3a8a;
+    --secundaria: #3b82f6;
+    --status-concluido: #22c55e;
+    --status-pendente: #eab308;
+    --status-andamento: #0ea5e9;
+    --fundo: #ffffff;
+    --texto-principal: #111827;
+}
+
+header{
+    background-color: var(--secundaria);
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header img{
+    width: 100px;
+}
+
+header h1{
+    color: var(--fundo);
+}
+
+#novo-servico-container{
+    margin: 15px 0;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: 90%;
+    margin: auto;
+}
+
+#novo-servico-container button{
+    width: 100%;
+    background-color: var(--principal);
+    color: var(--fundo);
+    border: none;
+    outline: none;
+    font-weight: bold;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+#painel #servicos-hoje{
+    
+}
