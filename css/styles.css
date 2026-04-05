@@ -11,6 +11,7 @@
     --status-pendente: #eab308;
     --status-andamento: #0ea5e9;
     --fundo: #ffffff;
+    --fundo-2: #e3e4e8;
     --texto-principal: #111827;
 }
 
@@ -56,6 +57,45 @@ header h1{
     padding: 10px;
 }
 
+#painel{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 8px;
+}
+
+#painel #servicos-hoje,
+#painel #servicos-concluidos{
+    border-radius: 10px;
+    width: 50%;
+    text-align: center;
+    margin-bottom:15px;
+    padding: 10px;
+    font-weight: bold;
+}
+
 #painel #servicos-hoje{
-    
+    background-color: var(--fundo-2);
+    color: black;
+}
+
+#painel #servicos-concluidos{
+    background-color: var(--status-concluido);
+    color: var(--fundo);
+}
+
+#btns{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#btns button{
+    background-color: var(--fundo);
+    color: var(--texto-principal);
+    font-weight: bold;
+    border: none;
+    outline: none;
 }
