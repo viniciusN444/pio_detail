@@ -98,4 +98,44 @@ header h1{
     font-weight: bold;
     border: none;
     outline: none;
+    padding: 10px;
+}
+
+#btns button:hover{
+    background-color: var(--principal);
+    border-radius: 8px;
+    color: var(--fundo);
+    transition: .5s ease;
+}
+
+#lista-agendamentos{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.cliente{
+    background-color: var(--status-pendente);
+    border-radius: 8px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#btnAddServico{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#btnAddServico button{
+    background-color: var(--status-concluido);
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    color: var(--fundo);
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 28px;
 }
