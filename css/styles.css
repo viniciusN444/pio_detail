@@ -147,6 +147,63 @@ header h1{
     font-size: 28px;
 }
 
+.novoServ{
+    background-color: var(--principal);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 50%;
+    margin: auto;
+
+    position: relative; 
+}
+
+.btnFecharContainer{
+    background-color: var(--principal);
+    color: var(--fundo);
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    outline: none;
+
+    position: absolute; 
+    top: 10px;
+    right: 10px;
+}
+
+.btnAdd {
+    background-color: var(--status-concluido);
+    color: var(--fundo);
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    outline: none;
+    margin: 10px 0;
+}
+
+.container-campo{
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+label{
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input{
+    padding: 8px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+}
+
 @media (min-width: 768px){
     body{
         background-color: var(--fundo-2);
