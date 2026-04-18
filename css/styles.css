@@ -15,6 +15,11 @@
     --texto-principal: #111827;
 }
 
+body{
+    background-color: var(--fundo-2);
+}
+
+/* HEADER */
 header{
     background-color: var(--secundaria);
     width: 100%;
@@ -25,10 +30,6 @@ header{
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-body{
-    background-color: var(--fundo-2);
-}
-
 header img{
     width: 100px;
 }
@@ -37,14 +38,7 @@ header h1{
     color: var(--fundo);
 }
 
-#novo-servico-container{
-    margin: 15px 0;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-}
-
+/* CONTAINER */
 .container{
     background-color: var(--fundo);
     max-width: 90%;
@@ -53,22 +47,27 @@ header h1{
     padding: 10px;
 }
 
+/* NOVO SERVIÇO BTN */
+#novo-servico-container{
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+}
+
 #novo-servico-container button{
     width: 100%;
     background-color: var(--principal);
     color: var(--fundo);
     border: none;
-    outline: none;
     font-weight: bold;
     border-radius: 8px;
     padding: 10px;
 }
 
+/* PAINEL */
 #painel{
     display: flex;
-    flex-flow: row nowrap;
     justify-content: space-evenly;
-    align-items: center;
     gap: 8px;
 }
 
@@ -84,7 +83,6 @@ header h1{
 
 #painel #servicos-hoje{
     background-color: var(--fundo-2);
-    color: black;
 }
 
 #painel #servicos-concluidos{
@@ -92,11 +90,10 @@ header h1{
     color: var(--fundo);
 }
 
+/* FILTROS */
 #btns{
     display: flex;
-    flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
 }
 
 #btns button{
@@ -104,77 +101,92 @@ header h1{
     color: var(--texto-principal);
     font-weight: bold;
     border: none;
-    outline: none;
     padding: 10px;
+    cursor: pointer;
 }
 
 #btns button:hover{
     background-color: var(--principal);
     border-radius: 8px;
     color: var(--fundo);
-    transition: .5s ease;
+    transition: .3s;
 }
 
+/* LISTA */
 #lista-agendamentos{
     display: flex;
-    flex-flow: column nowrap;
+    flex-direction: column;
 }
 
 .cliente{
-    background-color: var(--status-pendente);
     border-radius: 8px;
     display: flex;
-    flex-flow: row nowrap;
     justify-content: space-between;
     margin: 10px 0;
     padding: 10px;
+    cursor: pointer;
 }
 
-#btnAddServico{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
+/* CORES POR STATUS */
+.cliente.pendente {
+    background-color: var(--status-pendente);
 }
 
-#btnAddServico button{
+.cliente.andamento {
+    background-color: var(--status-andamento);
+}
+
+.cliente.concluido {
     background-color: var(--status-concluido);
-    border-radius: 50%;
-    border: none;
-    outline: none;
-    color: var(--fundo);
-    font-weight: bold;
-    padding: 10px 15px;
-    font-size: 28px;
 }
 
+/* FORM NOVO SERVIÇO */
 .novoServ{
     background-color: var(--principal);
     color: white;
     padding: 20px;
     border-radius: 10px;
     max-width: 400px;
-    width: 50%;
-    margin: auto;
-
-    position: relative; 
+    width: 90%;
+    margin: 20px auto;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-.btnFecharContainer{
-    background-color: var(--principal);
-    color: var(--fundo);
-    cursor: pointer;
-    font-size: 22px;
+.container-campo{
+    display: flex;
+    flex-direction: column;
+}
+
+/* labels principais */
+.container-campo > label{
     font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    padding: 8px;
-    outline: none;
-
-    position: absolute; 
-    top: 10px;
-    right: 10px;
+    margin-top: 15px;
 }
 
+/* inputs */
+.novoServ input[type="text"],
+.novoServ input[type="time"]{
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 5px;
+}
+
+/* radios organizados */
+.novoServ div:has(input[type="radio"]){
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.novoServ input[type="radio"]{
+    margin-right: 5px;
+}
+
+/* BOTÕES */
 .btnAdd {
     background-color: var(--status-concluido);
     color: var(--fundo);
@@ -182,43 +194,30 @@ header h1{
     font-weight: bold;
     border: none;
     border-radius: 8px;
-    padding: 8px;
-    outline: none;
-    margin: 10px 0;
-}
-
-.container-campo{
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-label{
-    font-weight: bold;
+    padding: 10px;
     margin-top: 15px;
+    width: 100%;
 }
 
-input{
-    padding: 8px;
-    border-radius: 8px;
-    outline: none;
+.btnFecharContainer{
+    background-color: transparent;
+    color: var(--fundo);
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
     border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
 
+/* RESPONSIVO */
 @media (min-width: 768px){
-    body{
-        background-color: var(--fundo-2);
-    }
-    .container{
-        height: 100vh;
-        padding: 10px;
-    } 
-    header,.container{
+    header, .container{
         max-width: 50%;
         width: 50%;
+        margin: auto;
         border-left: 1px solid #1e3a8a;
         border-right: 1px solid #1e3a8a;
-    }
-    header{
-        margin: auto;
     }
 }
